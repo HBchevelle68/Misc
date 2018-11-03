@@ -2,6 +2,8 @@
 
 sudo apt-get update && sudo apt-get upgrade -y
 
+sudo apt-get install build-essential
+
 ##Install Sublime Text 3
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 sudo apt-get install apt-transport-https
@@ -13,3 +15,5 @@ sudo apt-get install sublime-text
 wget -O atom-amd64.deb https://atom.io/download/deb
 sudo apt install gdebi-core -y
 sudo gdebi atom-amd64.deb -y
+
+
