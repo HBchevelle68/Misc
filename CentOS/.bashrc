@@ -80,7 +80,7 @@ IWhite="\[\033[0;97m\]"       # White
 
 # Bold High Intensty
 BIBlack="\[\033[1;90m\]"      # Black
-BIRed="\[\033[1;91m\]"        # Red
+BIOrange="\[\033[1;91m\]"        # Red
 BIGreen="\[\033[1;92m\]"      # Green
 BIYellow="\[\033[1;93m\]"     # Yellow
 BIBlue="\[\033[1;94m\]"       # Blue
@@ -111,5 +111,5 @@ FullHost="\H"
 RootOrNah='\$'
 
 
-export PS1=$BIGreen$User$White@$Blue$ShortHost$White:$BIYellow$PathFull$RootOrNah$Color_Off
+export PS1=$BIGreen$User$White@$Blue$ShortHost$White:$BIOrange$PathFull$RootOrNah$Color_Off
 
