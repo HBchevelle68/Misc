@@ -1,0 +1,7 @@
+python_pre-req - gets prereqs for python 2.7.14 dev
+
+get_py_2..7.14 - pulls source, builds, compiles, and installs python 2.7.14
+
+createPYenv - create python virtualenv and maps to desire python version
+            - use after get_py_2..7.14 and python_pre-req
+

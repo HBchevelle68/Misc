@@ -1,0 +1,2 @@
+#!/bin/bash
+virtualenv --python=/usr/local/bin/python2.7 py2-7-14env
