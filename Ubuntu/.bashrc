@@ -88,7 +88,7 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -lF'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -124,12 +124,10 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# .bashrc
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
+
+#############################################################################################################
+
 
 echo -ne '\e]4;0;#222222\a'
 echo -ne '\e]4;1;#FF6347\a'
@@ -150,6 +148,7 @@ echo -ne '\e]4;15;#FFFFFF\a'
 echo -ne '\e]10;#EEEEEE\a'
 echo -ne '\e]11;#222222\a'
 echo -ne '\e]12;#EEEEEE\a'
+
 
 # Reset
 Color_Off="\[\033[0m\]"       # Text Reset
@@ -206,7 +205,7 @@ IWhite="\[\033[0;97m\]"       # White
 
 # Bold High Intensty
 BIBlack="\[\033[1;90m\]"      # Black
-BIOrange="\[\033[1;91m\]"        # Red
+BIOrange="\[\033[1;91m\]"     # Orange
 BIGreen="\[\033[1;92m\]"      # Green
 BIYellow="\[\033[1;93m\]"     # Yellow
 BIBlue="\[\033[1;94m\]"       # Blue
@@ -238,4 +237,7 @@ RootOrNah='\$'
 
 
 export PS1=$BIGreen$User$White@$Blue$ShortHost$White:$BIOrange$PathFull$RootOrNah$Color_Off
-LS_COLORS=$LS_COLORS:'di=0;34:' ; export LS_COLORS
+LS_COLORS=$LS_COLORS:'di=0;34:*.c=01;33:*.h=0;31:*.o=1;003;002:*.py=0;36' ; export LS_COLORS
+
+#Begin my aliase
+alias py37='source ~/virtual_environments/python3.7/bin/activate'
