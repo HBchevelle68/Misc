@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo zypper up && sudo zypper patch
+
+sudo zypper install git
+sudo zypper install -t pattern devel_basis devel_C_C++
