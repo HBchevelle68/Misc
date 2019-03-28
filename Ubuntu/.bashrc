@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -61,7 +61,7 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-unset color_prompt force_color_prompt
+#unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -237,7 +237,9 @@ RootOrNah='\$'
 
 
 export PS1=$BIGreen$User$White@$Blue$ShortHost$White:$BIOrange$PathFull$RootOrNah$Color_Off
-LS_COLORS=$LS_COLORS:'di=0;34:*.c=01;33:*.h=0;31:*.o=1;003;002:*.py=0;36' ; export LS_COLORS
+LS_COLORS=$LS_COLORS:'di=0;34:*.c=01;33:*.h=0;31:*.o=1;003;002:*.py=0;36:*.nasm=0;033' ; export LS_COLORS
 
-#Begin my aliases
+#Begin my aliase
 alias py37='source ~/virtual_environments/python3.7/bin/activate'
+alias d="dirs -v"
+
