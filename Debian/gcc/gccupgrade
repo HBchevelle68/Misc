@@ -6,15 +6,16 @@ sudo apt-get -y install bzip2 curl
 
 BASE="ftp.gnu.org/gnu/gcc/"
 GETNEWEST=0
-CURRENT=$(gcc --version | head -n1 | awk '{print $4}')
+CURRENT=$(gcc --version | head -n1 | awk '{print $3}')
 CORES=$(cat /proc/cpuinfo | grep -m1 "cpu cores" | awk {'print $4'})
 
 NEWEST=$(curl -l ftp.gnu.org/gnu/gcc/ 2>/dev/null | 
         tail -q -n10 | 
         grep -i gcc-[0-9] | 
-        awk -F '-' '{print $2}' | 
-        sort -r | 
-        head -n1)
+        awk -F '-' '{print $2}' |  
+        tail -n1)
+
+echo ${NEWEST:0:1}
 
 if [ ${NEWEST:0:1} -gt ${CURRENT:0:1} ]; then
     echo "$NEWEST is the biggest"
