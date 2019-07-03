@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+YELLOW='\033[0;33m'
+RED='\033[0;31m'
+PURPLE='\033[1;35m'
+GREEN='\033[1;92m'
+BIBlue='\033[1;94m'
+NC='\033[0m'
+
+printf "${YELLOW}[*] updating...\n"
+sudo apt-get update 
+printf "${GREEN}[*] Done!\n" 
+printf "${BIBlue}[*] upgrading...\n"
+sudo apt-get upgrade -y
+printf "${GREEN}[*] Done!\n" 
+printf "${RED}[*] upgrading...\n"
+sudo apt-get dist-upgrade -y
+printf "${GREEN}[*] Done!${NC}\n" 

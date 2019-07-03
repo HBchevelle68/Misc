@@ -1,0 +1,80 @@
+#!/bin/bash
+
+YELLOW='\033[0;33m'
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+set -e
+
+sudo apt-get -y install bzip2 curl
+
+BASE="ftp.gnu.org/gnu/gcc/"
+GETNEWEST=0
+CURRENT=$(gcc --version | head -n1 | awk '{print $3}')
+CORES=$(cat /proc/cpuinfo | grep -m1 "cpu cores" | awk {'print $4'})
+
+NEWEST=$(curl -l ftp.gnu.org/gnu/gcc/ 2>/dev/null |
+        tail -q -n10 |
+        grep -i gcc-[0-9] |
+        awk -F '-' '{print $2}' |
+        sort -r |
+        head -n1)
+
+if [ ${NEWEST:0:1} -gt ${CURRENT:0:1} ]; then
+    printf "${RED}[!]${YELLOW} $NEWEST is newer!${NC}\n"
+    GETNEWEST=$((GETNEWEST+1))
+
+elif [ ${NEWEST:0:1} -eq ${CURRENT:0:1} ]; then
+    printf "${YELLOW}[*] Major numbers are the same${NC}\n"
+
+    if [ ${NEWEST:2:1} -gt ${CURRENT:2:1} ]; then
+        printf "${RED}[!] ${YELLOW}$NEWEST is newer!${NC}\n"
+        GETNEWEST=$((GETNEWEST+1))
+
+    elif [ ${NEWEST:2:1} -eq ${CURRENT:2:1} ]; then
+        printf "${YELLOW}[*] Minor numbers are the same${NC}\n"
+
+        if [ ${NEWEST:4:1} -gt ${CURRENT:4:1} ]; then
+            printf "${RED}[!] ${YELLOW}$NEWEST is newer!${NC}\n"
+            GETNEWEST=$((GETNEWEST+1))
+
+        elif [ ${NEWEST:4:1} -eq ${CURRENT:4:1} ]; then
+            printf "${YELLOW}[*] Patch numbers are the same${NC}\n"
+
+        else
+            printf "dafuq" && exit 1
+        fi
+
+    else
+        printf "dafuq" && exit 1
+    fi
+
+else
+    printf "dafuq" && exit 1
+fi
+
+if [ $GETNEWEST != 0 ]; then
+    printf "${YELLOW}[*] Current sytem version is $CURRENT...newest version is $NEWEST\n"
+    printf "${YELLOW} $GETNEWEST [!] Getting newest gcc source${NC}\n"
+
+    #Ubuntu throws error without --no-check-certificate
+    wget https://$BASE"gcc-"$NEWEST"/gcc-"$NEWEST".tar.gz" --no-check-certificate
+    tar xvf "gcc-"$NEWEST".tar.gz"
+    cd "gcc-"$NEWEST
+    pwd
+    ./contrib/download_prerequisites
+    ./configure --disable-multilib --enable-languages=c,c++
+    make -j $CORES
+    sudo make install
+    cd -
+    rm -rf "gcc-"$NEWEST "gcc-"$NEWEST".tar.gz"
+	printf "$GREEN[+] Your version of gcc is now up-to-date!\n${NC}"
+else
+    printf "$GREEN[+] Your version of gcc is up-to-date!\n${NC}"
+    printf "You are at $PWD\n"
+fi
+
+
+
+
