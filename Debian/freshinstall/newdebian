@@ -5,7 +5,7 @@ sudo apt-get update && sudo apt-get upgrade -y
 # Install base libraries
 sudo apt-get install -y build-essential libevent-dev libncurses5-dev apt-transport-https \
 libncursesw5-dev autotools-dev automake pkg-config vim emacs openssh-server net-tools autoconf \
-libtool valgrind python-pip python3-pip flex texinfo lzip bison libtool-bin bc
+libtool valgrind python-pip python3-pip flex texinfo lzip bison libtool-bin bc cvs
 
 ##Install Sublime Text 3
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
