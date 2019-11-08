@@ -239,5 +239,7 @@ RootOrNah='\$'
 export PS1=$BIGreen$User$White@$Blue$ShortHost$White:$BIOrange$PathFull$RootOrNah$Color_Off
 LS_COLORS=$LS_COLORS:'di=0;34:*.c=01;33:*.h=0;31:*.o=1;003;002:*.py=0;36' ; export LS_COLORS
 
+PATH=$PATH:/sbin; export PATH
+
+
 #Begin my aliases
-alias py37='source ~/virtual_environments/python3.7/bin/activate'
