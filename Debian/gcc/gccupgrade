@@ -15,8 +15,6 @@ NEWEST=$(curl -l ftp.gnu.org/gnu/gcc/ 2>/dev/null |
         awk -F '-' '{print $2}' |  
         tail -n1)
 
-echo ${NEWEST:0:1}
-
 if [ ${NEWEST:0:1} -gt ${CURRENT:0:1} ]; then
     echo "$NEWEST is the biggest"
     GETNEWEST=$((GETNEWEST+1))
