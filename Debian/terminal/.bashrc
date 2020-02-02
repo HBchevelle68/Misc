@@ -129,25 +129,7 @@ fi
 #############################################################################################################
 
 
-echo -ne '\e]4;0;#222222\a'
-echo -ne '\e]4;1;#FF6347\a'
-echo -ne '\e]4;2;#6ac214\a'
-echo -ne '\e]4;3;#edd400\a'
-echo -ne '\e]4;4;#1e90ff\a'
-echo -ne '\e]4;5;#ad7fa8\a'
-echo -ne '\e]4;6;#C6C5FE\a'
-echo -ne '\e]4;7;#EEEEEE\a'
-echo -ne '\e]4;8;#555753\a'
-echo -ne '\e]4;9;#f57900\a'
-echo -ne '\e]4;10;#8ae234\a'
-echo -ne '\e]4;11;#fce94f\a'
-echo -ne '\e]4;12;#8DB6CD\a'
-echo -ne '\e]4;13;#cbaec8\a'
-echo -ne '\e]4;14;#DFDFFE\a'
-echo -ne '\e]4;15;#FFFFFF\a'
-echo -ne '\e]10;#EEEEEE\a'
-echo -ne '\e]11;#222222\a'
-echo -ne '\e]12;#EEEEEE\a'
+
 
 
 # Reset
@@ -225,9 +207,16 @@ On_IWhite="\[\033[0;107m\]"   # White
 
 
 #Others
-WhiteOnPeach="\[\033[1;000;041m\]"
-BLightBlue="\[\033[1;094m\]"
-SlantedRed="\[\033[0;003;31m\]"
+
+BLightBlue="\[\033[38;5;087m\]"    # Bold Light Blue 
+BSeafoam="\[\033[38;5;084m\]"	   # Bold Seafoam Green
+Pink="\033[38;5;210m\]"		   # Pink
+LightPink="\033[38;5;217m\]"
+BrightLightBlue="\033[38;5;51m\]"
+New="\[\033[38;5;216m\]"
+
+
+WhiteOnRed="\[\033[1;000;041m\]"
 WhiteOnBlue="\[\033[0;044m\]"
 
 # Various variables you might want for your PS1 prompt instead
@@ -246,9 +235,9 @@ GitBranch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(
 
 
 
-export PS1=$BLightBlue$User$White@$Blue$ShortHost$White:$BIPurple$PathFull$Color_Off$SlantedRed$GitBranch$Red$RootOrNah$Color_Off
+export PS1=$BLightBlue$User$LightPink@$BSeafoam$ShortHost$BrightLightBlue:$New$PathFull$Color_Off$Pink$GitBranch$Red$RootOrNah$Color_Off
 
-LS_COLORS=$LS_COLORS:'di=0;34:*.c=01;33:*.h=0;31:*.o=1;003;002:*.py=0;36' ; export LS_COLORS
+LS_COLORS=$LS_COLORS:'di=38;5;084:*.c=01;33:*.h=0;31:*.o=1;003;002:*.py=0;36' ; export LS_COLORS
 
 PATH=$PATH:/sbin; export PATH
 
