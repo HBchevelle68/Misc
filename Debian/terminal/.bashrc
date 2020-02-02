@@ -47,12 +47,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
     else
-	color_prompt=
+    color_prompt=
     fi
 fi
 
@@ -121,7 +121,7 @@ fi
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+    . /etc/bashrc
 fi
 
 
@@ -223,6 +223,13 @@ On_IPurple="\[\033[10;95m\]"  # Purple
 On_ICyan="\[\033[0;106m\]"    # Cyan
 On_IWhite="\[\033[0;107m\]"   # White
 
+
+#Others
+WhiteOnPeach="\[\033[1;000;041m\]"
+BLightBlue="\[\033[1;094m\]"
+SlantedRed="\[\033[0;003;31m\]"
+WhiteOnBlue="\[\033[0;044m\]"
+
 # Various variables you might want for your PS1 prompt instead
 Time12h="\T"
 Time12a="\@"
@@ -234,9 +241,13 @@ User="\u"
 ShortHost="\h"
 FullHost="\H"
 RootOrNah='\$'
+GitBranch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
 
 
-export PS1=$BIGreen$User$White@$Blue$ShortHost$White:$BIOrange$PathFull$RootOrNah$Color_Off
+
+
+export PS1=$BLightBlue$User$White@$Blue$ShortHost$White:$BIPurple$PathFull$Color_Off$SlantedRed$GitBranch$Red$RootOrNah$Color_Off
+
 LS_COLORS=$LS_COLORS:'di=0;34:*.c=01;33:*.h=0;31:*.o=1;003;002:*.py=0;36' ; export LS_COLORS
 
 PATH=$PATH:/sbin; export PATH
