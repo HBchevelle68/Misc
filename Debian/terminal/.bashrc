@@ -210,9 +210,9 @@ On_IWhite="\[\033[0;107m\]"   # White
 
 BLightBlue="\[\033[38;5;087m\]"    # Bold Light Blue 
 BSeafoam="\[\033[38;5;084m\]"	   # Bold Seafoam Green
-Pink="\033[38;5;210m\]"		   # Pink
-LightPink="\033[38;5;217m\]"
-BrightLightBlue="\033[38;5;51m\]"
+Pink="\[\033[38;5;210m\]"		   # Pink
+LightPink="\[\033[38;5;217m\]"
+BrightLightBlue="\[\033[38;5;51m\]"
 New="\[\033[38;5;216m\]"
 
 

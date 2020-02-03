@@ -43,16 +43,16 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-force_color_prompt=yes
+#force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
     else
-	color_prompt=
+    color_prompt=
     fi
 fi
 
@@ -61,7 +61,7 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-#unset color_prompt force_color_prompt
+unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -121,7 +121,7 @@ fi
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+    . /etc/bashrc
 fi
 
 
@@ -129,25 +129,7 @@ fi
 #############################################################################################################
 
 
-echo -ne '\e]4;0;#222222\a'
-echo -ne '\e]4;1;#FF6347\a'
-echo -ne '\e]4;2;#6ac214\a'
-echo -ne '\e]4;3;#edd400\a'
-echo -ne '\e]4;4;#1e90ff\a'
-echo -ne '\e]4;5;#ad7fa8\a'
-echo -ne '\e]4;6;#C6C5FE\a'
-echo -ne '\e]4;7;#EEEEEE\a'
-echo -ne '\e]4;8;#555753\a'
-echo -ne '\e]4;9;#f57900\a'
-echo -ne '\e]4;10;#8ae234\a'
-echo -ne '\e]4;11;#fce94f\a'
-echo -ne '\e]4;12;#8DB6CD\a'
-echo -ne '\e]4;13;#cbaec8\a'
-echo -ne '\e]4;14;#DFDFFE\a'
-echo -ne '\e]4;15;#FFFFFF\a'
-echo -ne '\e]10;#EEEEEE\a'
-echo -ne '\e]11;#222222\a'
-echo -ne '\e]12;#EEEEEE\a'
+
 
 
 # Reset
@@ -223,23 +205,41 @@ On_IPurple="\[\033[10;95m\]"  # Purple
 On_ICyan="\[\033[0;106m\]"    # Cyan
 On_IWhite="\[\033[0;107m\]"   # White
 
+
+#Others
+
+BLightBlue="\[\033[38;5;087m\]"    # Bold Light Blue 
+BSeafoam="\[\033[38;5;084m\]"	   # Bold Seafoam Green
+Pink="\[\033[38;5;210m\]"		   # Pink
+LightPink="\[\033[38;5;217m\]"
+BrightLightBlue="\[\033[38;5;51m\]"
+New="\[\033[38;5;216m\]"
+
+
+WhiteOnRed="\[\033[1;000;041m\]"
+WhiteOnBlue="\[\033[0;044m\]"
+
 # Various variables you might want for your PS1 prompt instead
 Time12h="\T"
 Time12a="\@"
-PathShort="\w"
-PathFull="\W"
+PathFull="\w"
+PathShort="\W"
 NewLine="\n"
 Jobs="\j"
 User="\u"
 ShortHost="\h"
 FullHost="\H"
 RootOrNah='\$'
+GitBranch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
 
 
-export PS1=$BIGreen$User$White@$Blue$ShortHost$White:$BIOrange$PathFull$RootOrNah$Color_Off
-LS_COLORS=$LS_COLORS:'di=0;34:*.c=01;33:*.h=0;31:*.o=1;003;002:*.py=0;36:*.nasm=0;033' ; export LS_COLORS
 
-#Begin my aliase
-alias py37='source ~/virtual_environments/python3.7/bin/activate'
-alias d="dirs -v"
 
+export PS1=$BLightBlue$User$LightPink@$BSeafoam$ShortHost$BrightLightBlue:$New$PathFull$Color_Off$Pink$GitBranch$Red$RootOrNah$Color_Off
+
+LS_COLORS=$LS_COLORS:'di=38;5;084:*.c=01;33:*.h=0;31:*.o=1;003;002:*.py=0;36' ; export LS_COLORS
+
+PATH=$PATH:/sbin; export PATH
+
+
+#Begin my aliases
