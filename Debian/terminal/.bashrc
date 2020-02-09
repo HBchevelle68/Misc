@@ -214,7 +214,7 @@ Pink="\[\033[38;5;210m\]"		   # Pink
 LightPink="\[\033[38;5;217m\]"
 BrightLightBlue="\[\033[38;5;51m\]"
 Peach="\[\033[38;5;216m\]"
-LighterPink="\[\033[38;5;225m\]"
+LighterPink="\[\033[38;5;211m\]"
 
 
 WhiteOnRed="\[\033[1;000;041m\]"

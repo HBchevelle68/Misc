@@ -213,7 +213,8 @@ BSeafoam="\[\033[38;5;084m\]"	   # Bold Seafoam Green
 Pink="\[\033[38;5;210m\]"		   # Pink
 LightPink="\[\033[38;5;217m\]"
 BrightLightBlue="\[\033[38;5;51m\]"
-New="\[\033[38;5;216m\]"
+Peach="\[\033[38;5;216m\]"
+LighterPink="\[\033[38;5;211m\]"
 
 
 WhiteOnRed="\[\033[1;000;041m\]"
@@ -235,7 +236,7 @@ GitBranch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(
 
 
 
-export PS1=$BLightBlue$User$LightPink@$BSeafoam$ShortHost$BrightLightBlue:$New$PathFull$Color_Off$Pink$GitBranch$Red$RootOrNah$Color_Off
+export PS1=$BLightBlue$User$LightPink@$BSeafoam$ShortHost$BrightLightBlue:$Peach$PathFull$Color_Off$Pink$GitBranch$LighterPink$RootOrNah$Color_Off
 
 LS_COLORS=$LS_COLORS:'di=38;5;084:*.c=01;33:*.h=0;31:*.o=1;003;002:*.py=0;36' ; export LS_COLORS
 
