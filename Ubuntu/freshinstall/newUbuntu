@@ -6,9 +6,9 @@ pushd ~
 sudo apt-get update && sudo apt-get upgrade -y
 
 ## Install base libraries
-sudo apt-get install -y build-essential libevent-dev libncurses5-dev apt-transport-https \
+sudo apt-get install -y build-essential libevent-dev libcunit1 libcunit1-dev libncurses5-dev apt-transport-https \
 libncursesw5-dev autotools-dev automake pkg-config vim emacs openssh-server net-tools autoconf \
-libtool valgrind python-pip python3-pip flex texinfo lzip bison libtool-bin bc cvs open-vm-tools \
+libtool valgrind python3-pip vim make flex texinfo lzip bison libtool-bin bc cvs open-vm-tools \
 open-vm-tools-desktop snapd
 
 ## Install Sublime Text 3
