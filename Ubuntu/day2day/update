@@ -16,7 +16,7 @@ LightPink="\033[38;5;217m"
 BrightLightBlue="\033[38;5;51m"
 Peach="\033[38;5;216m"
 LighterPink="\033[38;5;211m"
-PASTELPURP="\033[38;5;153m"
+NEW="\033[38;5;153m"
 
 
 printf "${BLightBlue}[*] updating...\n"
