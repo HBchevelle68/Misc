@@ -208,13 +208,19 @@ On_IWhite="\[\033[0;107m\]"   # White
 
 #Others
 
-BLightBlue="\[\033[38;5;087m\]"    # Bold Light Blue 
-BSeafoam="\[\033[38;5;084m\]"	   # Bold Seafoam Green
+#BLightBlue="\[\033[38;5;087m\]"    # Bold Light Blue 
+#BSeafoam="\[\033[38;5;084m\]"	   # Bold Seafoam Green
 Pink="\[\033[38;5;210m\]"		   # Pink
-LightPink="\[\033[38;5;217m\]"
-BrightLightBlue="\[\033[38;5;51m\]"
-Peach="\[\033[38;5;216m\]"
-LighterPink="\[\033[38;5;211m\]"
+#LightPink="\[\033[38;5;217m\]"
+#BrightLightBlue="\[\033[38;5;51m\]"
+#Peach="\[\033[38;5;216m\]"
+#LighterPink="\[\033[38;5;211m\]"
+
+blightblue="\[\033[38:5:087m\]"
+softblue="\[\033[38:5:75m\]"
+LightBlue="\[\033[38:5:110m\]"
+Seafoam="\[\033[38:5:115m\]"
+lighterpink="\[\033[38:5:186\]"
 
 
 WhiteOnRed="\[\033[1;000;041m\]"
@@ -236,9 +242,9 @@ GitBranch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(
 
 
 
-export PS1=$BLightBlue$User$LightPink@$BSeafoam$ShortHost$BrightLightBlue:$Peach$PathFull$Color_Off$Pink$GitBranch$LighterPink$RootOrNah$Color_Off
+export PS1="$softblue$User$LightBlue@$softblue$ShortHost$LightBlue:$Seafoam$PathFull$Color_Off$Pink$GitBranch$lighterpink$RootOrNah$Color_Off"
 
-LS_COLORS=$LS_COLORS:'di=38;5;084:*.c=01;33:*.h=0;31:*.o=1;003;002:*.py=0;36' ; export LS_COLORS
+LS_COLORS=$LS_COLORS:'di=38;5;084:*.c=01;33:*.h=0;31:*.o=1;003;002:*.py=0;36:*.asm=38;5;216' ; export LS_COLORS
 
 PATH=$PATH:/sbin; export PATH
 
