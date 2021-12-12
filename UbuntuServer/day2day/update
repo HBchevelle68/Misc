@@ -1,0 +1,30 @@
+#!/bin/bash
+
+
+YELLOW='\033[0;33m'
+RED='\033[0;31m'
+PURPLE='\033[1;35m'
+GREEN='\033[1;92m'
+BIBlue='\033[1;94m'
+NC='\033[0m'
+#Others
+
+BLightBlue="\033[38;5;087m"    # Bold Light Blue 
+BSeafoam="\033[38;5;084m"	   # Bold Seafoam Green
+Pink="\033[38;5;210m"		   # Pink
+LightPink="\033[38;5;217m"
+BrightLightBlue="\033[38;5;51m"
+Peach="\033[38;5;216m"
+LighterPink="\033[38;5;211m"
+NEW="\033[38;5;153m"
+
+
+printf "${BLightBlue}[*] updating...\n"
+sudo apt-get update 
+printf "${NEW}[*] Done!\n" 
+printf "${BSeafoam}[*] upgrading...\n"
+sudo apt-get upgrade -y
+printf "${NEW}[*] Done!\n" 
+printf "${LightPink}[*] dist-upgrading...\n"
+sudo apt-get dist-upgrade -y
+printf "${NEW}[*] Done!${NC}\n" 
