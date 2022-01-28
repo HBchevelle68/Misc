@@ -242,7 +242,7 @@ GitBranch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(
 
 
 
-export PS1="$softblue$User$LightBlue@$softblue$ShortHost$LightBlue:$Seafoam$PathFull$Color_Off$Pink$GitBranch$lighterpink$RootOrNah$Color_Off"
+export PS1="$softblue$User$LightBlue@$softblue$ShortHost$LightBlue:$Seafoam$PathFull$Color_Off$Pink$GitBranch$lighterpink$RootOrNah$Color_Off>"
 
 LS_COLORS=$LS_COLORS:'di=38;5;084:*.c=01;33:*.h=0;31:*.o=1;003;002:*.py=0;36:*.asm=38;5;216' ; export LS_COLORS
 
