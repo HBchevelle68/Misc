@@ -28,6 +28,6 @@ printf "${NEW}[*] Done!\n"
 printf "${LightPink}[*] dist-upgrading...\n"
 sudo apt dist-upgrade -y
 printf "${NEW}[*] Done!${NC}\n" 
-printf "${YELLOW}[*] dist-upgrading...\n"
+printf "${YELLOW}[*] autoremoving...\n"
 sudo apt autoremove
 printf "${NEW}[*] Done!${NC}\n" 
