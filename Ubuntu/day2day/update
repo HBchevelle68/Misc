@@ -20,11 +20,14 @@ NEW="\033[38;5;153m"
 
 
 printf "${BLightBlue}[*] updating...\n"
-sudo apt-get update 
+sudo apt update 
 printf "${NEW}[*] Done!\n" 
 printf "${BSeafoam}[*] upgrading...\n"
-sudo apt-get upgrade -y
+sudo apt upgrade -y
 printf "${NEW}[*] Done!\n" 
 printf "${LightPink}[*] dist-upgrading...\n"
-sudo apt-get dist-upgrade -y
+sudo apt dist-upgrade -y
+printf "${NEW}[*] Done!${NC}\n" 
+printf "${YELLOW}[*] dist-upgrading...\n"
+sudo apt autoremove
 printf "${NEW}[*] Done!${NC}\n" 
