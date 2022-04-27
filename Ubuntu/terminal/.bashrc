@@ -207,7 +207,7 @@ Pink="\[\033[38;5;210m\]"		   # Pink
 #LighterPink="\[\033[38;5;211m\]"
 
 blightblue="\[\033[38:5:087m\]"
-oftblue="\[\033[38:5:75m\]"
+softblue="\[\033[38:5:75m\]"
 LightBlue="\[\033[38:5:110m\]"
 Seafoam="\[\033[38:5:115m\]"
 lighterpink="\[\033[38:5:186\]"
