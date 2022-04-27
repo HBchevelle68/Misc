@@ -7,10 +7,10 @@ UBUNTU_ROOT=$SCRIPT_DIR/..
 sudo cp $UBUNTU_ROOT/day2day/update /usr/bin/
 
 # Copy git aliases to git config
-cp $UBUNTU_ROOT/git/.gitconfig
+cp $UBUNTU_ROOT/git/.gitconfig ~
 
 # Copy over .bashrc
-cp $UBUNTU_ROOT/terminal/.bashrc
+cp $UBUNTU_ROOT/terminal/.bashrc ~
 
 # Move to home directory
 pushd ~
