@@ -227,7 +227,7 @@ User="\u"
 ShortHost="\h"
 FullHost="\H"
 RootOrNah='\$'
-GitBranch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /'
+GitBranch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\/`'
 
 
 export PS1="$softblue$User$LightBlue@$softblue$ShortHost$LightBlue:$Seafoam$PathFull$Color_Off$Pink$GitBranch$lighterpink$Color_Off>"
