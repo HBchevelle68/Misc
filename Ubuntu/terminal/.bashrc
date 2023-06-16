@@ -88,7 +88,7 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -lF'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -234,7 +234,7 @@ export PS1="$softblue$User$LightBlue@$softblue$ShortHost$LightBlue:$Seafoam$Path
 
 LS_COLORS=$LS_COLORS:'di=38;5;084:*.c=01;33:*.h=0;31:*.o=1;003;002:*.py=0;36:*.asm=38;5;216:*.go=38;5;110:*.rs=38;5;9' ; export LS_COLORS
 
-PATH=$PATH:/sbin; export PATH
+PATH=$PATH:/sbin:$HOME/bin; export PATH
 
 
 
@@ -249,4 +249,5 @@ else
 fi
 
 
-#Begin my aliases
+
+. "$HOME/.cargo/env"
